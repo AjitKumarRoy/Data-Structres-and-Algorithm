@@ -2,7 +2,7 @@ import java.util.*;
 public class SplitArray {
     public static void main(String[] args){
         int nums[] = {7,2,5,10,8};
-        int m = 2;
+        int m = 3;
         System.out.println(splitArray(nums,m));
     }
     public static int splitArray(int[] arr, int m){
