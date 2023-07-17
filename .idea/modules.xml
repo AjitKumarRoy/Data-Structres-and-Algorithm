@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Basics/Basics.iml" filepath="$PROJECT_DIR$/Basics/Basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/BinarySearch/BinarySearch.iml" filepath="$PROJECT_DIR$/BinarySearch/BinarySearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Linear Search/Linear Search.iml" filepath="$PROJECT_DIR$/Linear Search/Linear Search.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.Ajit.iml" filepath="$PROJECT_DIR$/com.Ajit.iml" />
     </modules>
   </component>
