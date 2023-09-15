@@ -4,9 +4,9 @@
 import java.util.*;
 public class OrderAgnosticBinarySearch {
     public static void main(String[] args) {
-        int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89};
-        //int[] arr = {45, 42, 23, 21, 3, -1, -12};
-        int target = 89;
+        //int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89};
+        int[] arr = {45, 42, 23, 21, 3, -1, -12};
+        int target = -12;
 
         int ans = orderAgnosticBinarySearch(arr, target);
         System.out.println(ans);
@@ -16,6 +16,9 @@ public class OrderAgnosticBinarySearch {
     public static int orderAgnosticBinarySearch(int[] arr, int target) {
         int start = 0;
         int end = arr.length-1;
+
+        //check if array is ascending or descending
+        boolean isAsc = (arr[start] < arr[end]);
 
         while (start <= end) {
             //find the middle element
@@ -28,7 +31,7 @@ public class OrderAgnosticBinarySearch {
             }
 
             //binary search for ascending order
-            if (arr[start] < arr[end]) {
+            if (isAsc) {
                 if (target < arr[mid]) {
                     end = mid - 1;
                 } else {
