@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/BinarySearch/BinarySearch.iml" filepath="$PROJECT_DIR$/BinarySearch/BinarySearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bubble Sort/Bubble Sort.iml" filepath="$PROJECT_DIR$/Bubble Sort/Bubble Sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/Linear Search/Linear Search.iml" filepath="$PROJECT_DIR$/Linear Search/Linear Search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Selection Sort/Selection Sort.iml" filepath="$PROJECT_DIR$/Selection Sort/Selection Sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.Ajit.iml" filepath="$PROJECT_DIR$/com.Ajit.iml" />
     </modules>
   </component>
