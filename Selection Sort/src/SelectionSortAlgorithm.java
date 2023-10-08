@@ -27,6 +27,8 @@ public class SelectionSortAlgorithm {
 //                swap(arr,maxIndex,end);
 //            }
 
+
+
             //find the max item in the remaining array from start to end and then swap it with the rightmost index i.e last index
 
             swap(arr,maxIndex,end);
