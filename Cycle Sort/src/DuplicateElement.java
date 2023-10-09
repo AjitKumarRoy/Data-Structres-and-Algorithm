@@ -1,7 +1,7 @@
 //Find the duplicate Number
 
 import java.util.*;
-public class Ajit{
+public class DuplicateElement{
     public static void main(String[] args){
         int[] arr = {1, 3, 4, 2, 2};
         System.out.println(findDuplicate(arr));
