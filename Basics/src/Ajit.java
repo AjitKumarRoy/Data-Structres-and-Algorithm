@@ -1,92 +1,79 @@
-//Binary Search in 2-D array
+//Missing Number
+
+//https://leetcode.com/problems/missing-number/
+
+
+
+//Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+//
+//
+//
+//Example 1:
+//
+//Input: nums = [3,0,1]
+//Output: 2
+//Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+//Example 2:
+//
+//Input: nums = [0,1]
+//Output: 2
+//Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
+//Example 3:
+//
+//Input: nums = [9,6,4,2,3,5,7,0,1]
+//Output: 8
+//Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
+
 
 import java.util.*;
-
 public class Ajit {
-    public static void main(String[] args){
-        int[][] arr = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12},
-                {13 , 14, 15, 16}
-        };
+    public static void main(String[] args) {
+        int[] arr = {4, 0, 2, 1};
 
-        int target = 6;
-
-        System.out.println(Arrays.toString(search(arr,target)));
+        //calling cycleSort function to print the missing element in an array
+        //containing elements from 0 to N, where also N is the length of array
+        System.out.println(cycleSort(arr));
 
     }
-    public static int[] search(int[][] arr, int target){
-        int rows = arr.length; // length of row
-        int cols = arr[0].length; //length of column
 
-        int rStart = 0;
-        int rEnd = rows -1;
-        int cMid = (cols-1) / 2;
+    //cycle sort function to find the missing number from an array containing elements from [0 to n]
+    //where n is also the length of array
 
-        //reducing the matrix to two rows
-        //reducing the search space to two rows
-        while (rStart < (rEnd-1)) {
-            int rMid = rStart + (rEnd - rStart) / 2;
+    public static int cycleSort(int[] arr) {
+        int i = 0;
 
-            if (target == arr[rMid][cMid]) {
-                return new int[] {rMid, cMid};
+        while (i < arr.length) {
+            int correctIndex =  arr[i]; //because the element is array start from 0 to n
+
+            //check if arr[i] is at correctIndex i.e arr[i]
+            //if arr[i] is not at correctIndex then just swap it
+            if (correctIndex < arr.length && arr[i] != arr[correctIndex]) {
+                //swapping
+                swap(arr, i, correctIndex);
             }
+            //if arr[i] is at correct index, then just move forward to the next index
+            else {
+                i++;
+            }
+         }
 
-            if (target < arr[rMid][cMid]) {
-                rEnd = rMid;
-            } else {
-                rStart = rMid;
+
+        //now the array is sorted and every element is at its own index, except the missing one
+        //search the missing element
+        //case 1 :- if the elements from 0 to n-1 is missing
+        for(int j = 0; j < arr.length; j++) {
+            if (arr[j] != j) {
+                return j; //just return the index
             }
         }
-
-        //now we have two rows after the while loop is over
-        if (target == arr[rStart][cMid]) {
-            return new int[] {rStart, cMid};
-        }
-        if (target == arr[rEnd][cMid]) {
-            return new int[] {rEnd, cMid};
-        }
-
-        //four cases
-
-        //search in 1st half
-        if (target <= arr[rStart][cMid - 1]) {
-            return binarySearch(arr,target,rStart,0,cMid-1);
-        }
-
-        //search in 2nd half
-        if (target >= arr[rStart][cMid+1] && target <= arr[rStart][cols-1]) {
-            return binarySearch(arr,target,rStart,cMid+1,cols-1);
-        }
-
-        //search in 3rd half
-        if (target <= arr[rEnd][cMid - 1]) {
-            return binarySearch(arr,target,rEnd,0,cMid-1);
-        }
-
-        //search in 4th half
-        else {
-            return binarySearch(arr, target,rEnd,cMid+1,cols-1);
-        }
+        //case 2 :- if the n'th element is missing
+        return arr.length;
     }
 
-    //normal binary search algorithm
-    public static int[] binarySearch(int[][] arr, int target, int row, int cStart, int cEnd) {
-        while (cStart <= cEnd) {
-            //find the middle element
-            int cMid = cStart + (cEnd - cStart) / 2;
-
-            if (target == arr[row][cMid]) {
-                return new int[] {row, cMid};
-            }
-
-            if (target < arr[row][cMid]) {
-                cEnd = cMid - 1;
-            } else {
-                cStart = cMid + 1;
-            }
-        }
-        return new int[] {-1, -1};
+    //function to swap the two elements in an array
+    public static void swap(int[] arr, int firstIndex, int secondIndex) {
+        int temp = arr[firstIndex];
+        arr[firstIndex] = arr[secondIndex];
+        arr[secondIndex] = temp;
     }
 }
