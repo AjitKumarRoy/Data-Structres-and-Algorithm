@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/Recursion_Introduction/Recursion_Introduction.iml" filepath="$PROJECT_DIR$/Recursion_Introduction/Recursion_Introduction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Selection Sort/Selection Sort.iml" filepath="$PROJECT_DIR$/Selection Sort/Selection Sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/String and String Builder/String and String Builder.iml" filepath="$PROJECT_DIR$/String and String Builder/String and String Builder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Time and Space Complexity/Time and Space Complexity.iml" filepath="$PROJECT_DIR$/Time and Space Complexity/Time and Space Complexity.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.Ajit.iml" filepath="$PROJECT_DIR$/com.Ajit.iml" />
     </modules>
   </component>
