@@ -1,20 +1,24 @@
-// Check if the given no is odd or even
+//Find the position of the right most set bit
 
 import java.util.*;
-public class Test2 {
+public  class Test2 {
     public static void main(String[] args) {
-        //calling checkEven function
-        for (int i = 0; i <= 5; i++) {
-            boolean ans = checkEven(i);
-            System.out.println(ans);
-        }
+        //calling function
+        System.out.println(position(10));
     }
 
-    //function to check if the given number if odd
-    public static boolean checkEven(int n) {
-        if (n == 0) {
-            return false;
+    //function to find the position of the right most set bit
+    public static int position (int n) {
+        int a = 1;
+        int count = 1;
+
+        while (true) {
+            a = a << 1;
+            count++;
+
+            if ((n & 1) == 1) {
+                return count;
+            }
         }
-        return ((n & 1) == 0);
     }
 }
