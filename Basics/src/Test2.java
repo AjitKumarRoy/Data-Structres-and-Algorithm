@@ -1,24 +1,23 @@
-//Find the position of the right most set bit
-
 import java.util.*;
-public  class Test2 {
+public class Test2 {
     public static void main(String[] args) {
-        //calling function
-        System.out.println(position(10));
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
+
+        reverse(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
-    //function to find the position of the right most set bit
-    public static int position (int n) {
-        int a = 1;
-        int count = 1;
+    public static int reverse(int[] arr) {
+        int start = 0;
+        int end = arr.length-1;
 
-        while (true) {
-            a = a << 1;
-            count++;
-
-            if ((n & 1) == 1) {
-                return count;
-            }
+        for (int i = 0; i < (arr.length-1) / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
         }
+        return 0;
     }
+
+
 }
